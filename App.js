@@ -1,41 +1,9 @@
-import { StatusBar } from "expo-status-bar";
-import React from "react";
-import {
-  StyleSheet,
-  View,
-  SafeAreaView,
-  Alert,
-  Dimensions,
-  Button,
-} from "react-native";
+import WelcomeScreen from "./app/screens/WelcomeScreen";
+import ViewImageView from "./app/screens/ViewImageScreen";
 
-import { useDimensions } from "@react-native-community/hooks";
+import React from "react";
+import { View } from "react-native";
 
 export default function App() {
-  console.log(Dimensions); //
-  const onPressed = () => {
-    console.log("Ketan");
-    return Alert.alert("Ketan Ramteke", "This is alert box", [
-      { text: "Yes" },
-      { text: "No" },
-    ]);
-  };
-  return (
-    <SafeAreaView style={styles.container}>
-      <View
-        style={{ backgroundColor: "dodgerblue", width: "100%", height: "20%" }}
-      >
-        <Button title={"Clicked"} onPress={onPressed} />
-      </View>
-    </SafeAreaView>
-  );
+  return <ViewImageView />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
