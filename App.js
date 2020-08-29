@@ -2,39 +2,31 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import {
   StyleSheet,
-  Text,
   View,
-  Image,
   SafeAreaView,
-  TouchableWithoutFeedback,
-  TouchableOpacity,
-  TouchableNativeFeedback,
+  Alert,
+  Dimensions,
+  Button,
 } from "react-native";
 
+import { useDimensions } from "@react-native-community/hooks";
+
 export default function App() {
-  console.log("app executed");
-  const onPressed = () => console.log("text pressed fn");
+  console.log(Dimensions); //
+  const onPressed = () => {
+    console.log("Ketan");
+    return Alert.alert("Ketan Ramteke", "This is alert box", [
+      { text: "Yes" },
+      { text: "No" },
+    ]);
+  };
   return (
     <SafeAreaView style={styles.container}>
-      <Text numberOfLines={1} onPress={onPressed}>
-        Open up App.js to start
-      </Text>
-      <TouchableNativeFeedback onPress={onPressed}>
-        {/* <Image
-          blurRadius={1}
-          fadeDuration={1000}
-          source={{
-            uri: "https://picsum.photos/200/300",
-            height: 300,
-            width: 200,
-          }}
-        /> */}
-        <View
-          style={{ width: 200, height: 50, backgroundColor: "dodgerblue" }}
-        ></View>
-      </TouchableNativeFeedback>
-      <StatusBar style="auto" />
-      {/* </View> */}
+      <View
+        style={{ backgroundColor: "dodgerblue", width: "100%", height: "20%" }}
+      >
+        <Button title={"Clicked"} onPress={onPressed} />
+      </View>
     </SafeAreaView>
   );
 }
