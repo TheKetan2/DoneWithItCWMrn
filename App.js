@@ -4,7 +4,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Card from "./app/components/Card/Card";
 import ListingDetailScreen from "./app/screens/ListingDetailScreen";
+import ViewImageScreen from "./app/screens/ViewImageScreen";
 
 export default function App() {
-  return <ListingDetailScreen />;
+  return <ViewImageScreen />;
 }
