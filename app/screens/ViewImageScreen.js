@@ -5,7 +5,6 @@ export default function ViewImageScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.closeIcon}></View>
-      <View></View>
       <View style={styles.deleteIcon}></View>
 
       <Image

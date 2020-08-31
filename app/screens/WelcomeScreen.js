@@ -1,9 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, ImageBackground } from "react-native";
 
+import AppButton from "../components/Buttons/AppButton";
+
 export default function WelcomeScreen() {
   return (
     <ImageBackground
+      blurRadius={10}
       source={require("../assets/background.jpg")}
       style={styles.background}
     >
@@ -12,10 +15,19 @@ export default function WelcomeScreen() {
           source={require("../assets/logo-red.png")}
           style={styles.redLogo}
         />
-        <Text>Sell What You Dont Need</Text>
+        <Text style={styles.tabline}>Sell What You Dont Need</Text>
       </View>
-      <View style={styles.loginBtn}></View>
-      <View style={styles.registerBtn}></View>
+      <View style={styles.buttonContainer}>
+        <AppButton
+          title="Login"
+          onPress={() => console.log("Button clicked")}
+        />
+        <AppButton
+          title="Register"
+          onPress={() => console.log("Button clicked")}
+          color="secondary"
+        />
+      </View>
     </ImageBackground>
   );
 }
@@ -27,16 +39,17 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "center",
   },
-  loginBtn: {
+
+  buttonContainer: {
+    padding: 20,
     width: "100%",
-    height: 70,
-    backgroundColor: "#fc5c65",
   },
-  registerBtn: {
-    width: "100%",
-    height: 70,
-    backgroundColor: "#4ecdc4",
+  tabline: {
+    fontSize: 25,
+    fontWeight: "600",
+    paddingVertical: 20,
   },
+
   redLogo: {
     width: 100,
     height: 100,
