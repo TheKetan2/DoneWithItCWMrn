@@ -20,16 +20,17 @@ export default Card;
 const styles = StyleSheet.create({
   card: {
     borderRadius: 10,
-    backgroundColor: colors.white,
+    backgroundColor: "#fff",
     marginBottom: 20,
     overflow: "hidden",
+    elevation: 0.5,
   },
   detailsContainer: {
     padding: 20,
   },
   image: {
     width: "100%",
-    height: 200,
+    height: "50%",
     overflow: "hidden",
   },
   title: {
