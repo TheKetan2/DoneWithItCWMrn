@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import AppText from "../components/AppText";
 import ListItem from "../components/ListItems/ListItem";
 import colors from "../config/colors";
+import ListItemDeleteAction from "../components/ListItemDeleteAction";
 
 const ListingDetailScreen = () => {
   return (
