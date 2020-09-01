@@ -1,10 +1,9 @@
 import React from "react";
-import { FlatList } from "react-native";
-
-import Constants from "expo-constants";
+import { FlatList, View, StyleSheet } from "react-native";
 
 import ListItem from "../components/ListItems/ListItem";
 import Screen from "../components/Screen";
+import ListItemSeperator from "../components/ListItemSeperator";
 
 const messages = [
   {
@@ -40,9 +39,12 @@ const MessagesScreen = () => {
             subTitle={item.description}
           />
         )}
+        ItemSeparatorComponent={() => <ListItemSeperator />}
       />
     </Screen>
   );
 };
 
 export default MessagesScreen;
+
+const styles = StyleSheet.create({});
