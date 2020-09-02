@@ -30,6 +30,8 @@ const InitialMessages = [
 
 const MessagesScreen = () => {
   const [messages, setMessages] = useState(InitialMessages);
+  const [refreshing, setRefreshing] = useState(false);
+
   const handleDelete = (message) => {
     setMessages(messages.filter((m) => m.id !== message.id));
   };
@@ -53,6 +55,17 @@ const MessagesScreen = () => {
         ItemSeparatorComponent={() => (
           <ListItemSeperator onPress={() => console.log("hello")} />
         )}
+        refreshing={refreshing}
+        onRefresh={() =>
+          setMessages([
+            {
+              id: 3,
+              title: "t3",
+              description: "d3",
+              image: require("../assets/mosh.jpg"),
+            },
+          ])
+        }
       />
     </Screen>
   );
