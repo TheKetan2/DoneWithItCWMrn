@@ -12,15 +12,23 @@ import AppText from "../AppText";
 import colors from "../../config/colors";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-const ListItem = ({ image, title, subTitle, onPress, renderRightActions }) => {
+const ListItem = ({
+  image,
+  title,
+  subTitle,
+  onPress,
+  renderRightActions,
+  ImageComponent,
+}) => {
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableOpacity onPress={onPress}>
         <View style={styles.container}>
-          <Image style={styles.image} source={image} />
-          <View>
+          {ImageComponent}
+          {image && <Image style={styles.image} source={image} />}
+          <View style={styles.detailsContainer}>
             <AppText style={styles.title}>{title}</AppText>
-            <AppText style={styles.subTitle}>{subTitle}</AppText>
+            {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
           </View>
         </View>
       </TouchableOpacity>
@@ -36,11 +44,15 @@ const styles = StyleSheet.create({
     marginTop: 10,
     padding: 15,
   },
+  detailsContainer: {
+    marginLeft: 15,
+    // alignItems: "center",
+    justifyContent: "center",
+  },
   image: {
     width: 70,
     height: 70,
     borderRadius: 35,
-    marginRight: 10,
   },
   subTitle: {
     fontSize: 14,
