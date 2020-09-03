@@ -6,17 +6,15 @@ import Card from "./app/components/Card/Card";
 import ListingDetailScreen from "./app/screens/ListingDetailScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 import MessagesScreen from "./app/screens/MessagesScreen";
+import AccountScreen from "./app/screens/AccountScreen";
+
 import Screen from "./app/components/Screen";
 import Icon from "./app/components/Icon";
 import ListItem from "./app/components/ListItems/ListItem";
 export default function App() {
   return (
     <Screen>
-      <ListItem
-        title="My Title"
-        subTitle="My Subtitle"
-        ImageComponent={<Icon name="email" />}
-      />
+      <AccountScreen />
     </Screen>
   );
 }
