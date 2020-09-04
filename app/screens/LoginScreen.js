@@ -1,56 +1,53 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Image } from "react-native";
 import * as Yup from "yup";
 
 import Screen from "../components/Screen";
-import {
-  AppFormField,
-  SubmitButton,
-  AppForm,
-  AppFormPicker,
-} from "../components/forms";
+import { Form, FormField, SubmitButton } from "../components/forms";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
   password: Yup.string().required().min(4).label("Password"),
 });
 
-const LoginScreen = () => {
+function LoginScreen(props) {
   return (
-    <Screen style={styles.screen}>
+    <Screen style={styles.container}>
       <Image style={styles.logo} source={require("../assets/logo-red.png")} />
-      <AppForm
-        onSubmit={(values) => console.log(values)}
+
+      <Form
         initialValues={{ email: "", password: "" }}
+        onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
-        <AppFormField
-          placeholder="Email"
+        <FormField
+          autoCapitalize="none"
+          autoCorrect={false}
           icon="email"
-          autoCapitalize="none"
-          authoCorrect={false}
           keyboardType="email-address"
-          textContentType="emailAddress"
           name="email"
+          placeholder="Email"
+          textContentType="emailAddress"
         />
-        <AppFormField
+        <FormField
           autoCapitalize="none"
-          authoCorrect={false}
+          autoCorrect={false}
           icon="lock"
+          name="password"
           placeholder="Password"
           secureTextEntry
           textContentType="password"
-          name="password"
         />
         <SubmitButton title="Login" />
-      </AppForm>
+      </Form>
     </Screen>
   );
-};
-
-export default LoginScreen;
+}
 
 const styles = StyleSheet.create({
+  container: {
+    padding: 10,
+  },
   logo: {
     width: 80,
     height: 80,
@@ -58,7 +55,6 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginBottom: 20,
   },
-  screen: {
-    padding: 20,
-  },
 });
+
+export default LoginScreen;
