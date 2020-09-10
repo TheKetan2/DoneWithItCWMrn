@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import * as ImagePicker from "expo-image-picker";
-import { Button, Image } from "react-native";
+import { Image, TouchableOpacity, View, Button } from "react-native";
 
 import Screen from "./app/components/Screen";
+import ImageInput from "./app/components/ImageInput";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 export default function App() {
-  const [imageURI, setImageURI] = useState({});
+  // WE are using hooks to store image url
+  const [imageURI, setImageURI] = useState(null);
+
+  /* showing alert message for getting required permissions 
+  for accessing image gallery */
 
   const requestPermission = async () => {
     const { granted } = await ImagePicker.requestCameraPermissionsAsync();
@@ -13,6 +19,10 @@ export default function App() {
       alert("You need to enable permission to access Image");
     }
   };
+
+  /* function for selecting the image and setting imageURI 
+  for us to use
+  */
 
   const selectImage = async () => {
     try {
@@ -26,14 +36,21 @@ export default function App() {
     }
   };
 
+  /* when our component runs for the first time the n useEffet runs the
+  requestPermission() function to get needed permissions
+  
+  */
   useEffect(() => {
     requestPermission();
   }, []);
 
   return (
     <Screen>
-      <Button title="Select Image" onPress={selectImage} />
-      <Image style={{ width: 100, height: 100 }} source={{ uri: imageURI }} />
+      <Button onPress={selectImage} title="Select Image" />
+      <ImageInput
+        imageURI={imageURI}
+        onChangeImage={(uri) => setImageURI(uri)}
+      />
     </Screen>
   );
 }
