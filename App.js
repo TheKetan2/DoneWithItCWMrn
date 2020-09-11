@@ -9,12 +9,12 @@ import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import ImageInputList from "./app/components/ImageInputList";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
 
-const Link = () => {
+const Link = ({ name }) => {
   const navigation = useNavigation();
   return (
     <Button
       title={"Link"}
-      onPress={() => navigation.navigate("TweetDetails", { id: "Ketan" })}
+      onPress={() => navigation.navigate(name, { id: "Ketan" })}
     />
   );
 };
@@ -22,27 +22,38 @@ const Link = () => {
 const Tweets = ({ navigation }) => (
   <Screen>
     <Text>Tweets</Text>
-    <Link />
+    <Link name={"TweetDetails"} />
   </Screen>
 );
 
 const TweetsDetails = ({ route }) => (
   <Screen>
     <Text>Tweets Details {route.params.id}</Text>
+    <Link name={"Tweets"} />
   </Screen>
 );
 
 const Stack = createStackNavigator();
 const StackNavigator = () => (
-  <Stack.Navigator>
+  <Stack.Navigator
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: "tomato",
+      },
+      headerTintColor: "white",
+    }}
+  >
     <Stack.Screen name="Tweets" component={Tweets} />
 
     <Stack.Screen
       name="TweetDetails"
       component={TweetsDetails}
-      options={({ route }) => ({
-        title: route.params.id,
-      })}
+      options={{
+        headerStyle: {
+          backgroundColor: "tomato",
+        },
+        headerTintColor: "white",
+      }}
     />
   </Stack.Navigator>
 );
