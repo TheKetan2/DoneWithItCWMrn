@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Image, Text, TouchableOpacity, View, Button } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
 import Screen from "./app/components/Screen";
-import ImageInput from "./app/components/ImageInput";
-import { TouchableWithoutFeedback } from "react-native-gesture-handler";
-import ImageInputList from "./app/components/ImageInputList";
-import ListingEditScreen from "./app/screens/ListingEditScreen";
 
 const Link = ({ name }) => {
   const navigation = useNavigation();
@@ -58,10 +55,30 @@ const StackNavigator = () => (
   </Stack.Navigator>
 );
 
+const Feed = () => (
+  <Screen>
+    <Text>Feed</Text>
+  </Screen>
+);
+
+const Account = () => (
+  <Screen>
+    <Text>Account</Text>
+  </Screen>
+);
+
+const Tab = createBottomTabNavigator();
+const TabNavigator = () => (
+  <Tab.Navigator>
+    <Tab.Screen name="Feed" component={Feed} />
+    <Tab.Screen name="Account" component={Account} />
+  </Tab.Navigator>
+);
+
 export default function App() {
   return (
     <NavigationContainer>
-      <StackNavigator />
+      <TabNavigator />
     </NavigationContainer>
   );
 }
