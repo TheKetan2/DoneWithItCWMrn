@@ -1,0 +1,4 @@
+types of navigators: 
+- stack navigator
+- tab navigator
+- drawer navigator
