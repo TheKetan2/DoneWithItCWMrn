@@ -6,30 +6,9 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Screen from "./app/components/Screen";
-
-const Link = ({ name }) => {
-  const navigation = useNavigation();
-  return (
-    <Button
-      title={"Link"}
-      onPress={() => navigation.navigate(name, { id: "Ketan" })}
-    />
-  );
-};
-
-const Tweets = ({ navigation }) => (
-  <Screen>
-    <Text>Tweets</Text>
-    <Link name={"TweetDetails"} />
-  </Screen>
-);
-
-const TweetsDetails = ({ route }) => (
-  <Screen>
-    <Text>Tweets Details {route.params.id}</Text>
-    <Link name={"Tweets"} />
-  </Screen>
-);
+import AccountScreen from "./app/screens/AccountScreen";
+import ListingEditScreen from "./app/screens/ListingEditScreen";
+import ListingScreen from "./app/screens/ListingsScreen";
 
 const Stack = createStackNavigator();
 const StackNavigator = () => (
@@ -56,18 +35,6 @@ const StackNavigator = () => (
   </Stack.Navigator>
 );
 
-const Feed = () => (
-  <Screen>
-    <Text style={{ textAlign: "center" }}>Feed</Text>
-  </Screen>
-);
-
-const Account = () => (
-  <Screen>
-    <Text style={{ textAlign: "center" }}>Account</Text>
-  </Screen>
-);
-
 const Tab = createBottomTabNavigator();
 const TabNavigator = () => (
   <Tab.Navigator
@@ -85,9 +52,20 @@ const TabNavigator = () => (
           <MaterialCommunityIcons name={"home"} size={size} color={color} />
         ),
       }}
-      name="Feed"
-      component={Feed}
+      name="Home"
+      component={ListingScreen}
     />
+
+    <Tab.Screen
+      options={{
+        tabBarIcon: ({ size, color }) => (
+          <MaterialCommunityIcons name={"plus"} size={size} color={color} />
+        ),
+      }}
+      name="Add"
+      component={ListingEditScreen}
+    />
+
     <Tab.Screen
       options={{
         tabBarIcon: ({ size, color }) => (
@@ -95,7 +73,7 @@ const TabNavigator = () => (
         ),
       }}
       name="Account"
-      component={Account}
+      component={AccountScreen}
     />
   </Tab.Navigator>
 );
