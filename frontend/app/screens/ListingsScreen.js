@@ -1,39 +1,53 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FlatList, StyleSheet } from "react-native";
 
 import Card from "../components/Card";
 import colors from "../config/colors";
 import Screen from "../components/Screen";
-
-const listings = [
-  {
-    id: 1,
-    title: "Red jacket for sale",
-    price: 100,
-    image: require("../assets/jacket.jpg"),
-  },
-  {
-    id: 2,
-    title: "Couch in great condition",
-    price: 1000,
-    image: require("../assets/couch.jpg"),
-  },
-];
+import listingsApi from "../api/listings";
+import AppText from "../components/AppText";
+import Button from "../components/Button";
 
 function ListingsScreen({ navigation }) {
+  const [listings, setListings] = useState([]);
+
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    loadListings();
+  }, []);
+
+  const loadListings = async () => {
+    const result = await listingsApi.getListings();
+    if (!result.ok) return setError(true);
+
+    setError(false);
+    setListings(result.data);
+  };
+
   return (
     <Screen style={styles.screen}>
+      {error ||
+        (listings.length == 0 && (
+          <>
+            <AppText>Couldn't retrive the listings.</AppText>
+            <Button title={"Retry"} onPress={loadListings} />
+          </>
+        ))}
       <FlatList
         data={listings}
         keyExtractor={(listing) => listing.id.toString()}
-        renderItem={({ item }) => (
-          <Card
-            title={item.title}
-            subTitle={"$" + item.price}
-            image={item.image}
-            onPress={() => navigation.navigate("ListingDetails", item)}
-          />
-        )}
+        renderItem={({ item }) => {
+          console.log(item.images[0].url);
+          return (
+            <Card
+              title={item.title}
+              subTitle={"$" + item.price}
+              imageURL={item.images[0].url}
+              onPress={() => navigation.navigate("ListingDetails", item)}
+            />
+          );
+        }}
       />
     </Screen>
   );
