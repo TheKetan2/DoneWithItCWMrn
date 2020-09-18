@@ -10,25 +10,23 @@ import Button from "../components/Button";
 import useApi from "../hooks/useApi";
 
 function ListingsScreen({ navigation }) {
-  const { data: listings, error, loading, request: loadListings } = useApi(
-    listingsApi.getListings
-  );
+  const getListingsApi = useApi(listingsApi.getListings);
 
   useEffect(() => {
-    loadListings();
+    getListingsApi.request(1, 2, 3);
   }, []);
 
   return (
     <Screen style={styles.screen}>
-      {error && (
+      {getListingsApi.error && (
         <>
           <AppText>Couldn't retrive the listings.</AppText>
           <Button title={"Retry"} onPress={loadListings} />
         </>
       )}
-      <ActivityIndicator animating={loading} />
+      <ActivityIndicator animating={getListingsApi.loading} />
       <FlatList
-        data={listings}
+        data={getListingsApi.data}
         keyExtractor={(listing) => listing.id.toString()}
         renderItem={({ item }) => {
           console.log(item.images[0].url);
