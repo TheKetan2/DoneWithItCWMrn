@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add apisauce
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-progress --save
 
 PATH: 
   C:\ProgramData\Boxstarter;C:\ProgramData\Anaconda3;C:\ProgramData\Anaconda3\Library\mingw-w64\bin;C:\ProgramData\Anaconda3\Library\usr\bin;C:\ProgramData\Anaconda3\Library\bin;C:\ProgramData\Anaconda3\Scripts;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\Git\bin;C:\Program Files\Java\jdk-11.0.1\bin;C:\gradle-4.10.1-all\gradle-4.10.1\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\mysql-8.0.16-winx64\bin;C:\xampp\mysql\bin;C:\Program Files\Dart\dart-sdk\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\flutter\bin;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\PostgreSQL\10\pgAdmin 4\bin;C:\MinGW\bin;C:\Users\Ketan\AppData\Local\Microsoft\WindowsApps;C:\flutter\bin;C:\Program Files\Git\bin\git.exe;C:\Program Files\Java\jdk-11.0.1\bin;C:\Exercism;C:\gradle-4.10.1-all\gradle-4.10.1\bin;C:\mysql-8.0.16-winx64\bin;C:\Users\Ketan\AppData\Local\Android\Sdk\platform-tools;C:\Users\Ketan\AppData\Local\GitHubDesktop\bin;C:\Users\Ketan\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Ketan\AppData\Roaming\npm;C:\Users\Ketan\AppData\Local\Yarn\bin;C:\Users\Ketan\AppData\Local\Microsoft\WindowsApps;C:\Program Files\PostgreSQL\10\pgAdmin 4\bin;C:\Program Files\PostgreSQL\10\bin;C:\MinGW\bin;
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'E:\Work\DoneWithItCWMrn\frontend\node_modules\@babel\compat-data\node_modules\.bin'
+  Error: EPERM: operation not permitted, unlink 'E:\Work\DoneWithItCWMrn\frontend\node_modules\@babel\generator\node_modules\.bin'
 
 npm manifest: 
   {
@@ -32,6 +32,7 @@ npm manifest:
       "@react-navigation/bottom-tabs": "^5.8.0",
       "@react-navigation/native": "5",
       "@react-navigation/stack": "^5.9.0",
+      "apisauce": "^1.1.2",
       "expo": "~38.0.8",
       "expo-constants": "^9.1.1",
       "expo-image-picker": "~8.3.0",
@@ -1512,6 +1513,14 @@ Lockfile:
       micromatch "^3.1.4"
       normalize-path "^2.1.1"
   
+  apisauce@^1.1.2:
+    version "1.1.2"
+    resolved "https://registry.yarnpkg.com/apisauce/-/apisauce-1.1.2.tgz#1778156802ea8cb07e27ad4ec87cd0c9990a51d1"
+    integrity sha512-AqOrOVk71JPSqugA6PdrkE2S0w1GC/f3xPZPMHJ1O+Z73pwT2uoGnr8JbfmB/gvO2cnygYzlBOnkD/mN6W1FMQ==
+    dependencies:
+      axios "^0.19.0"
+      ramda "^0.25.0"
+  
   argparse@^1.0.7:
     version "1.0.10"
     resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.10.tgz#bcd6791ea5ae09725e17e5ad988134cd40b3d911"
@@ -1625,6 +1634,13 @@ Lockfile:
     integrity sha512-XWX3OX8Onv97LMk/ftVyBibpGwY5a8SmuxZPzeOxqmuEqUCOM9ZE+uIaD1VNJ5QnvU2UQusvmKbuM1FR8QWGfQ==
     dependencies:
       array-filter "^1.0.0"
+  
+  axios@^0.19.0:
+    version "0.19.2"
+    resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
+    integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
+    dependencies:
+      follow-redirects "1.5.10"
   
   babel-plugin-dynamic-import-node@^2.3.3:
     version "2.3.3"
@@ -2214,6 +2230,13 @@ Lockfile:
     version "2.6.9"
     resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
     integrity sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==
+    dependencies:
+      ms "2.0.0"
+  
+  debug@=3.1.0:
+    version "3.1.0"
+    resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+    integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
     dependencies:
       ms "2.0.0"
   
@@ -2872,6 +2895,13 @@ Lockfile:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/fn-name/-/fn-name-3.0.0.tgz#0596707f635929634d791f452309ab41558e3c5c"
     integrity sha512-eNMNr5exLoavuAMhIUVsOKF79SWd/zG104ef6sxBTSw+cZc6BXdQXDvYcGvp0VbxVVSp1XDUNoz7mg1xMtSznA==
+  
+  follow-redirects@1.5.10:
+    version "1.5.10"
+    resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+    integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
+    dependencies:
+      debug "=3.1.0"
   
   fontfaceobserver@^2.1.0:
     version "2.1.0"
@@ -4596,6 +4626,11 @@ Lockfile:
     version "2.2.0"
     resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.2.0.tgz#3345941b4153cb9d082d8eee4cda2016a9aef7f6"
     integrity sha512-FIqgj2EUvTa7R50u0rGsyTftzjYmv/a3hO345bZNrqabNqjtgiDMgmo4mkUjd+nzU5oF3dClKqFIPUKybUyqoQ==
+  
+  ramda@^0.25.0:
+    version "0.25.0"
+    resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.25.0.tgz#8fdf68231cffa90bc2f9460390a0cb74a29b29a9"
+    integrity sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
   
   range-parser@~1.2.1:
     version "1.2.1"
