@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "expo-blur": "^8.1.2",
+    "expo-file-system": "^9.1.0",
+    "react": "^16.13.1",
+    "react-native-expo-image-cache": "^4.1.0"
+  }
+}

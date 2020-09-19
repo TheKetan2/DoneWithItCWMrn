@@ -1,8 +1,8 @@
 import React from "react";
 import {
   View,
-  StyleSheet,
   Image,
+  StyleSheet,
   TouchableWithoutFeedback,
 } from "react-native";
 
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   detailsContainer: {
-    padding: 20,
+    // padding: 20,
   },
   image: {
     width: "100%",
