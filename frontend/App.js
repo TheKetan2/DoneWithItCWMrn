@@ -14,14 +14,14 @@ export default function App() {
   const [user, setUser] = useState();
   const [isReady, setIsReady] = useState(false);
 
-  const restoreToken = async () => {
+  const restoreUser = async () => {
     const user = await authStorage.getUser();
     if (user) setUser(user);
   };
 
   if (!isReady) {
     return (
-      <AppLoading startAsync={restoreToken} onFinish={() => setIsReady(true)} />
+      <AppLoading startAsync={restoreUser} onFinish={() => setIsReady(true)} />
     );
   }
 
