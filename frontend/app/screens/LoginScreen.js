@@ -17,7 +17,7 @@ const validationSchema = Yup.object().shape({
   password: Yup.string().required().min(4).label("Password"),
 });
 
-function LoginScreen(props) {
+function LoginScreen() {
   const [loginFailed, setLoginFailed] = useState(false);
   const { logIn } = useAuth();
 

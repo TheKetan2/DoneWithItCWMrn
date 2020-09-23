@@ -32,4 +32,4 @@ const getUser = async () => {
   return token ? jwtDecode(token) : null;
 };
 
-export default { getUser, storeToken, removeToken };
+export default { getToken, getUser, storeToken, removeToken };
