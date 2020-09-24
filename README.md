@@ -18,10 +18,10 @@ Topics learned:
 - Notification
 - Distribution
 
-[]("assets/../assets/log-reg.png")
-[]("assets/../assets/register.png")
-[]("assets/../assets/login.png")
-[]("assets/../assets/list.png")
-[]("assets/../assets/detail.png")
-[]("assets/../assets/account.png")
-[]("assets/../assets/messeges.png")
+![LoginRegisterScreen](assets/../assets/log-reg.png)
+![RegisterScreen](assets/../assets/register.png)
+![LoginScreen](assets/../assets/login.png)
+![ListScreen](assets/../assets/list.png)
+![DetailsScreen](assets/../assets/detail.png)
+![AccountScreen](assets/../assets/account.png)
+![MessagesScreen](assets/../assets/messeges.png)
