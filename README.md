@@ -18,14 +18,20 @@ Topics learned:
 - Notification
 - Distribution
 
-###Screenshots:
+# Screenshots:
 
-![LoginRegisterScreen](assets/../assets/log-reg.png)
+| Login Register Screen                                | Register Screen                                  |
+| ---------------------------------------------------- | ------------------------------------------------ |
+| ![LoginRegisterScreen](assets/../assets/log-reg.png) | ![RegisterScreen](assets/../assets/register.png) |
 
-![RegisterScreen](assets/../assets/register.png)
+| Login Screen                               | List Screens                             |
+| ------------------------------------------ | ---------------------------------------- |
+| ![LoginScreen](assets/../assets/login.png) | ![ListScreen](assets/../assets/list.png) |
 
-![LoginScreen](assets/../assets/login.png)
-![ListScreen](assets/../assets/list.png)
-![DetailsScreen](assets/../assets/detail.png)
-![AccountScreen](assets/../assets/account.png)
-![MessagesScreen](assets/../assets/messeges.png)
+| Details Screen                                | Account Screen                                 |
+| --------------------------------------------- | ---------------------------------------------- |
+| ![DetailsScreen](assets/../assets/detail.png) | ![AccountScreen](assets/../assets/account.png) |
+
+| Messeges Screen                                  |
+| ------------------------------------------------ |
+| ![MessagesScreen](assets/../assets/messeges.png) |
