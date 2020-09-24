@@ -20,13 +20,11 @@ Topics learned:
 
 # Screenshots:
 
-| Login Register Screen                                | Register Screen                                  |
-| ---------------------------------------------------- | ------------------------------------------------ |
-| ![LoginRegisterScreen](assets/../assets/log-reg.png) | ![RegisterScreen](assets/../assets/register.png) |
+| Login Register Screen | Register Screen | Login Screen | List Screens |
+| --------------------- | --------------- | ------------ | ------------ |
 
-| Login Screen                               | List Screens                             |
-| ------------------------------------------ | ---------------------------------------- |
-| ![LoginScreen](assets/../assets/login.png) | ![ListScreen](assets/../assets/list.png) |
+
+| ![LoginRegisterScreen](assets/../assets/log-reg.png) | ![RegisterScreen](assets/../assets/register.png) | ![LoginScreen](assets/../assets/login.png) | ![ListScreen](assets/../assets/list.png) |
 
 | Details Screen                                | Account Screen                                 |
 | --------------------------------------------- | ---------------------------------------------- |
