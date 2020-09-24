@@ -24,6 +24,6 @@ Topics learned:
 | ---------------------------------------------------- | ------------------------------------------------ | ------------------------------------------ | ---------------------------------------- |
 | ![LoginRegisterScreen](assets/../assets/log-reg.png) | ![RegisterScreen](assets/../assets/register.png) | ![LoginScreen](assets/../assets/login.png) | ![ListScreen](assets/../assets/list.png) |
 
-| Details Screen                                | Account Screen                                 | Messeges Screen                                  |
-| --------------------------------------------- | ---------------------------------------------- | ------------------------------------------------ |
-| ![DetailsScreen](assets/../assets/detail.png) | ![AccountScreen](assets/../assets/account.png) | ![MessagesScreen](assets/../assets/messeges.png) |
+| Details Screen                                | Account Screen                                 | Messeges Screen                                  | Post Screen                                  |
+| --------------------------------------------- | ---------------------------------------------- | ------------------------------------------------ | -------------------------------------------- |
+| ![DetailsScreen](assets/../assets/detail.png) | ![AccountScreen](assets/../assets/account.png) | ![MessagesScreen](assets/../assets/messeges.png) | ![PostScreen](assets/../assets/messeges.png) |
