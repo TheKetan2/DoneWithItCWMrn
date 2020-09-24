@@ -18,8 +18,12 @@ Topics learned:
 - Notification
 - Distribution
 
+###Screenshots:
+
 ![LoginRegisterScreen](assets/../assets/log-reg.png)
+
 ![RegisterScreen](assets/../assets/register.png)
+
 ![LoginScreen](assets/../assets/login.png)
 ![ListScreen](assets/../assets/list.png)
 ![DetailsScreen](assets/../assets/detail.png)
