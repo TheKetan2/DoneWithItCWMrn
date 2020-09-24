@@ -1,14 +1,25 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  KeyboardAvoidingView,
+  Platform,
+} from "react-native";
 
 import AppText from "../components/AppText";
+import ContactSellerForm from "../components/ContactSellerForm";
 import { ListItem } from "../components/lists/index";
 import colors from "../config/colors";
 
 const ListingDetailScreen = ({ route }) => {
   const listing = route.params;
   return (
-    <View>
+    <KeyboardAvoidingView
+      behavior="position"
+      keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 100}
+    >
       <Image style={styles.image} source={{ uri: listing.images[0].url }} />
       <View style={styles.detailsContainer}>
         <AppText style={styles.title}>{listing.title}</AppText>
@@ -20,8 +31,9 @@ const ListingDetailScreen = ({ route }) => {
             image={require("../assets/mosh.jpg")}
           />
         </View>
+        <ContactSellerForm listing={listing} />
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
