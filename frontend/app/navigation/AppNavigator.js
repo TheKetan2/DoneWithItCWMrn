@@ -9,12 +9,16 @@ import expoPushTokentsApi from "../api/expoPushTokens";
 import FeedStackNavigator from "./FeedNavigator";
 import AccountStackNavigator from "./AccountNavigator";
 import NewListingButton from "./NewListingButton";
+import navigation from "../navigation/rootNavigation";
 
 const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => {
   useEffect(() => {
     registerForPushNotifications();
+    Notifications.addListener((notification) => {
+      navigation.navigate("Avvount");
+    });
   }, []);
 
   const registerForPushNotifications = async () => {
